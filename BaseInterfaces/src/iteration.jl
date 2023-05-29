@@ -30,7 +30,7 @@ function test_iterate(x)
     iterate(x, last(iterate(x))) isa Tuple
 end
 
-# :size demonstrates an interface condition that instead of return a Bool,
+""" :size demonstrates an interface condition that instead of return a Bool,"""
 function test_size(x)
     sizetrait = Base.IteratorSize(typeof(x))
     if sizetrait isa Base.HasLength
@@ -60,11 +60,11 @@ function test_eltype(x)
     end
 end
 
-#=
+"""
 :indexing returns three condition functions.
 We force the implementation of `firstindex` and `lastindex`
 Or it is hard to test `getindex` generically
-=#
+"""
 function test_indexing(x)
     firstindex(x) isa Integer &&
     lastindex(x) isa Integer &&
